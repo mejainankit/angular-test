@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule, ROUTES, Routes } from '@angular/router';
 import { HomeComponent } from './components/home.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
@@ -15,7 +16,12 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent, ItemCardComponent],
-  imports: [CommonModule, MatCardModule, RouterModule.forChild([])],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    RouterModule.forChild([]),
+  ],
   exports: [RouterModule],
   providers: [
     {
