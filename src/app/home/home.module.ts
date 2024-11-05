@@ -9,25 +9,22 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    pathMatch: 'full',
     children: [],
   },
 ];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, ItemCardComponent],
   imports: [CommonModule, MatCardModule, RouterModule.forChild([])],
   exports: [RouterModule],
   providers: [
     {
       provide: ROUTES,
       useFactory: () => {
-        console.log('routes[0]', routes[0]);
         routes[0].children?.push({
           path: 'item-card/:id',
           component: ItemCardComponent,
         });
-        console.log('routes', routes);
         return routes;
       },
       multi: true,

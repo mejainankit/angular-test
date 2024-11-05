@@ -1,5 +1,5 @@
 <div class="home-container">
-  <router-outlet></router-outlet>
+  <router-outlet style="width: 100%"></router-outlet>
   <div class="list-container">
     <ng-container *ngFor="let item of listData">
       <mat-card class="card" [routerLink]="['item-card', item.id]">

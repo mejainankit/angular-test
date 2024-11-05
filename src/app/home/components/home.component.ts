@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getDataList().subscribe({
       next: (data: any) => {
         this.listData = data;
+        this.dataService.setDataList(data);
       },
       error: (err) => {
         console.log('Error in fetching List data ::', err);
