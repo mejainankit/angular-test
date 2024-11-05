@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
@@ -7,19 +7,21 @@ import { DataService } from '../../services/data.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   listData: any = [];
 
-  constructor(private dataService: DataService, private router: Router) {}
+  constructor(private dataService: DataService, private router: Router) {
+    this.getData();
+  }
 
-  ngOnInit() {
+  getData() {
     this.dataService.getDataList().subscribe({
       next: (data: any) => {
         this.listData = data;
         this.dataService.setDataList(data);
       },
       error: (err) => {
-        console.log('Error in fetching List data ::', err);
+        this.listData = [];
       },
     });
   }

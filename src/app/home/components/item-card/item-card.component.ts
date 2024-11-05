@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class ItemCardComponent {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
+    this.route.paramMap.subscribe((params) => {
       const selectedId = Number(params?.get('id'));
       this.selectedItem = this.dataService.dataList.find(
         ({ id }) => id === selectedId
