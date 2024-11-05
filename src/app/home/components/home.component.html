@@ -1,0 +1,13 @@
+<div class="home-container">
+  <router-outlet></router-outlet>
+  <div class="list-container">
+    <ng-container *ngFor="let item of listData">
+      <mat-card class="card" [routerLink]="['item-card', item.id]">
+        <mat-card-header class="card-header">{{ item.title }}</mat-card-header>
+        <mat-card-content class="card-content">{{
+          item.body
+        }}</mat-card-content>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>

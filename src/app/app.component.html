@@ -1,0 +1,12 @@
+<div class="main-container">
+  @if(isAuthenticated) {
+  <div class="title-bar">
+    <div class="title">Test Project</div>
+    <app-nav [navItems]="navItems"></app-nav>
+  </div>
+  }
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

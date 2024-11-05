@@ -1,0 +1,5 @@
+<div class="nav-container">
+  @for (item of navItems; track item.navName) {
+  <nav class="nav-btn" [routerLink]="item.redirectTo">{{ item.navName }}</nav>
+  }
+</div>
